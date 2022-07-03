@@ -1,20 +1,13 @@
 import React from "react";
-import useLocalStorage from "../hooks/useLocalStorage";
+import WelcomeScreen from "../components/welcome-screen/WelcomeScreen";
+import CompanyDetails from "../components/company-details/CompanyDetails";
 
 function OnboardingFlow() {
-  const [isOpen, setOpen] = useLocalStorage("is-open", false);
-
-  const handleToggle = () => {
-    setOpen(!isOpen);
-  };
-
   return (
-    <div>
-      <button type="button" onClick={handleToggle}>
-        Toggle
-      </button>
-      {isOpen && <div>Content</div>}
-    </div>
+    <>
+      <WelcomeScreen />
+      <CompanyDetails />
+    </>
   );
 }
 
