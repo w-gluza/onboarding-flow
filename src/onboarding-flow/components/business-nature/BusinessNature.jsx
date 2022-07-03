@@ -1,7 +1,7 @@
 import React from "react";
 
-const BusinessNature = () => {
+function BusinessNature() {
   return <div>BusinessNature</div>;
-};
+}
 
 export default BusinessNature;

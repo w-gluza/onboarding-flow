@@ -1,7 +1,7 @@
 import React from "react";
 
-const WelcomeScreen = () => {
+function WelcomeScreen() {
   return <div>WelcomeScreen</div>;
-};
+}
 
 export default WelcomeScreen;

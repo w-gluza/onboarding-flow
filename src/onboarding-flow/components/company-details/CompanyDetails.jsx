@@ -1,7 +1,7 @@
 import React from "react";
 
-const CompanyDetails = () => {
+function CompanyDetails() {
   return <div>CompanyDetails</div>;
-};
+}
 
 export default CompanyDetails;

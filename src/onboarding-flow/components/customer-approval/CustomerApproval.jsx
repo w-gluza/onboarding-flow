@@ -1,7 +1,7 @@
 import React from "react";
 
-const CustomerApproval = () => {
+function CustomerApproval() {
   return <div>CustomerApproval</div>;
-};
+}
 
 export default CustomerApproval;
