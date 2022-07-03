@@ -1,7 +1,8 @@
 import "./App.css";
+import OnboardingFlow from "./onboarding-flow";
 
 function App() {
-  return <p>Onboarding flow</p>;
+  return <OnboardingFlow />;
 }
 
 export default App;
