@@ -1,8 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "./MainContainerLayout.css";
 
 function MainContainerLayout({ children }) {
-  return <main>{children}</main>;
+  return <main className="main-container-layout">{children}</main>;
 }
 
 MainContainerLayout.propTypes = {

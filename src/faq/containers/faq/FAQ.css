@@ -1,0 +1,24 @@
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-primary);
+  height: 100%;
+}
+
+.faq-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-brand-bright);
+  margin: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.panels-container {
+  width: 100%;
+}
+

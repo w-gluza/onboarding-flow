@@ -1,5 +1,5 @@
 import React from "react";
-import SideNav from "../components/SideNav/SideNav";
+import SideNav from "../../components/side-nav/SideNav";
 
 function SideNavLayout() {
   return (

@@ -1,0 +1,12 @@
+.nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo {
+  margin: var(--spacing-md) 0;
+  max-width: var(--icon-lg);
+  fill: var(--color-white);
+}

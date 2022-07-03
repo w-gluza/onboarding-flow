@@ -1,38 +1,176 @@
-.App {
-  text-align: center;
+@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+html,
+body {
+  height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+:root {
+  /* Typography */
+
+  --font-primary: "Montserrat", Helvetica, Arial, sans-serif;
+  --font-bold: 500;
+  --font-regular: 300;
+
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.5rem;
+  --text-lg: 2.375rem;
+  --text-xl: 3.5rem;
+
+  /* Spacing */
+
+  --spacing-xs: 0.75rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2.25rem;
+  --spacing-lg: 1rem;
+  --spacing-xl: 1rem;
+
+  /* Grids and Layouts */
+
+  --grid-gap: 2.25rem;
+
+  /* Colors */
+
+  --color-primary: #195c56;
+
+  --color-brand-light: #d7ffe4;
+  --color-brand-bright: #5be695;
+  --color-brand-subtle: #7aa899;
+  --color-brand-dark: #0f342e;
+
+  --color-light: #f4f2f0;
+  --color-white: #fff;
+  --color-dark: #1e1e1e;
+
+  --color-success: #195c56;
+  --color-info: #17a2b8;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+
+  /* Border radius */
+  --border-radius-xs: 0.25rem;
+  --border-radius-sm: 1rem;
+  --border-radius-md: 2.25rem;
+  --border-radius-lg: 3.125rem;
+  --border-radius-xl: 5rem;
+
+  /* Buttons */
+
+  --btn-font-size: 1rem;
+  --btn-radius: var(--border-radius-lg);
+  --btn-border: 1px solid var(--color-primary);
+
+  /* Icons */
+
+  --icon-sm: 1rem;
+  --icon-md: 3rem;
+  --icon-lg: 5rem;
+
+  /* Breakpoints */
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 540px;
+  --breakpoint-md: 720px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
+
+  /* Animations */
+
+  --animation-duration: 500ms;
 }
 
-.App-link {
-  color: #61dafb;
+/* ----- Typography ----- */
+
+body {
+  font-size: var(--text-sm);
+  font-family: var(--font-primary);
+  color: var(--color-dark);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+h1,
+h2,
+h3,
+h4 {
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+  font-weight: var(--font-bold);
+}
+
+h1,
+.text--xl {
+  font-size: var(--text-xl);
+}
+
+h2,
+.text--xl {
+  font-size: var(--text-xl);
+}
+
+h3,
+.text--lg {
+  font-size: var(--text-lg);
+}
+
+h4,
+.text--md {
+  font-size: var(--text-md);
+}
+
+h5,
+.text--sm {
+  font-size: var(--text-sm);
+}
+
+.text--primary {
+  color: var(--color-primary);
+}
+
+.text--bright {
+  color: var(--color-brand-bright);
+}
+
+.text--bold {
+  font-weight: var(--font-bold);
+}
+
+/* ----- Buttons ----- */
+
+.btn {
+  display: inline-flex;
+  position: relative;
+  white-space: nowrap;
+  text-decoration: none;
+
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--btn-radius);
+  font-size: var(--btn-font-size);
+  color: var(--color-primary);
+  border: var(--btn-border);
+}
+
+.btn--primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn--primary:hover {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+}
+
+.btn--secondary {
+  background-color: var(--color-white);
+  color: var(--color-primary);
 }

@@ -4,10 +4,10 @@ import CompanyDetails from "../components/company-details/CompanyDetails";
 
 function OnboardingFlow() {
   return (
-    <>
+    <section>
       <WelcomeScreen />
       <CompanyDetails />
-    </>
+    </section>
   );
 }
 
