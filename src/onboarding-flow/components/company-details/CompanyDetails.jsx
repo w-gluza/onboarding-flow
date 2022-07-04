@@ -3,6 +3,7 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { US_ZIP, URL } from "../../utils/validationHelpers";
 import FormField from "../../../@common/components/form/FormField";
+import FormFieldSelect from "../../../@common/components/form/form-field-select/FormFieldSelect";
 
 const CompanyDetailsMessagesSchema = Yup.object().shape({
   company: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
@@ -12,7 +13,7 @@ const CompanyDetailsMessagesSchema = Yup.object().shape({
   zipCode: Yup.string().matches(US_ZIP, "Enter a valid US zip code"),
   city: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
   website: Yup.string().matches(URL, "Enter a valid url"),
-  regNumber: Yup.string().min(1, "Too Short!").max(10, "Too Long!"),
+  regNumber: Yup.string().min(5, "Too Short!").max(10, "Too Long!").required("Required"),
 });
 
 const CompanyDetailsInitialValues = {
@@ -33,14 +34,22 @@ function CompanyDetails() {
       <Formik
         initialValues={CompanyDetailsInitialValues}
         validationSchema={CompanyDetailsMessagesSchema}
-        onSubmit={(values) => {
+        onSubmit={(values, { resetForm }) => {
           console.log(values);
+          resetForm();
         }}
       >
-        {({ errors, touched }) => (
+        {({ errors, touched, isValid, dirty }) => (
           <Form>
             <FormField name="company" label="Company" touched={touched.company} error={errors.company} isRequired />
-            <FormField name="country" label="Country" touched={touched.country} error={errors.country} isRequired />
+            <FormFieldSelect
+              name="country"
+              label="Country"
+              touched={touched.country}
+              error={errors.country}
+              options={["AU", "IRL", "GB", "US"]}
+              isRequired
+            />
             <FormField name="address" label="Address" touched={touched.address} error={errors.address} isRequired />
             <FormField
               name="apartment"
@@ -71,7 +80,9 @@ function CompanyDetails() {
               error={errors.regNumber}
               isRequired
             />
-            <button type="submit">Submit</button>
+            <button type="submit" disabled={!(isValid && dirty)}>
+              Submit
+            </button>
           </Form>
         )}
       </Formik>
