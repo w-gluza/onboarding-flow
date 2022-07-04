@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:300,500");
 
 *,
 *::before,
@@ -34,12 +34,14 @@ body {
   --spacing-xs: 0.75rem;
   --spacing-sm: 1rem;
   --spacing-md: 2.25rem;
-  --spacing-lg: 1rem;
-  --spacing-xl: 1rem;
+  --spacing-lg: 3.5rem;
+  --spacing-xl: 7rem;
 
   /* Grids and Layouts */
 
-  --grid-gap: 2.25rem;
+  --gap-xs: 0.75rem;
+  --gap-sm: 1rem;
+  --gap-md: 2.25rem;
 
   /* Colors */
 
@@ -86,6 +88,10 @@ body {
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1440px;
 
+  /* Utils */
+  --full-width: 100%;
+  --full-height: 100%;
+
   /* Animations */
 
   --animation-duration: 500ms;
@@ -103,33 +109,27 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--color-primary);
-  margin-bottom: var(--spacing-sm);
+  color: var(--color-dark);
   font-weight: var(--font-bold);
 }
 
-h1,
-.text--xl {
+h1 {
   font-size: var(--text-xl);
 }
 
-h2,
-.text--xl {
-  font-size: var(--text-xl);
-}
-
-h3,
-.text--lg {
-  font-size: var(--text-lg);
-}
-
-h4,
-.text--md {
+h2 {
   font-size: var(--text-md);
 }
 
-h5,
-.text--sm {
+h3 {
+  font-size: var(--text-lg);
+}
+
+h4 {
+  font-size: var(--text-md);
+}
+
+h5 {
   font-size: var(--text-sm);
 }
 
@@ -145,6 +145,10 @@ h5,
   font-weight: var(--font-bold);
 }
 
+.text--xs {
+  font-size: var(--text-xs);
+}
+
 /* ----- Buttons ----- */
 
 .btn {
@@ -152,8 +156,9 @@ h5,
   position: relative;
   white-space: nowrap;
   text-decoration: none;
+  font-weight: var(--font-bold);
 
-  padding: var(--spacing-xs) var(--spacing-sm);
+  padding: var(--spacing-xs) var(--spacing-lg);
   border-radius: var(--btn-radius);
   font-size: var(--btn-font-size);
   color: var(--color-primary);
@@ -173,4 +178,29 @@ h5,
 .btn--secondary {
   background-color: var(--color-white);
   color: var(--color-primary);
+}
+
+/* ----- Icons ----- */
+
+.icon-sm {
+  max-width: var(--icon-sm);
+  max-height: var(--icon-sm);
+}
+
+.icon-md {
+  max-width: var(--icon-md);
+  max-height: var(--icon-md);
+}
+
+.icon-lg {
+  max-width: var(--icon-lg);
+  max-height: var(--icon-lg);
+}
+
+.full-width {
+  width: var(--full-width);
+}
+
+.full-height {
+  width: var(--full-height);
 }
