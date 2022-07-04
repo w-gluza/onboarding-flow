@@ -1,13 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Store from "./Store";
+import PanelContext from "./PanelContext";
 import "./Panel.css";
 
 function PanelGroup({ children }) {
   return (
-    <Store>
+    <PanelContext>
       <section className="panelGroup">{children}</section>
-    </Store>
+    </PanelContext>
   );
 }
 

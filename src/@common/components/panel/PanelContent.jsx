@@ -1,6 +1,6 @@
 import React, { useContext, useLayoutEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { CTX } from "./Store";
+import { PanelContext } from "./PanelContext";
 
 const DEFAULT_HEIGHT = "auto";
 
@@ -11,12 +11,10 @@ export function getHeight(element) {
   return `${element.current.scrollHeight}px`;
 }
 
-function PanelContent(props) {
-  const { children, eventKey } = props;
+function PanelContent({ children, eventKey }) {
   const [style, setStyle] = useState(null);
   const id = `panelContent" + ${eventKey + 1}`;
-
-  const [activeIndex] = useContext(CTX);
+  const { activeIndex } = useContext(PanelContext);
 
   // * "useLayoutEffect - use this if you need to perform measurements" https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
   useLayoutEffect(() => {
@@ -38,8 +36,7 @@ function PanelContent(props) {
 
 PanelContent.propTypes = {
   children: PropTypes.node.isRequired,
-  // eslint-disable-next-line react/require-default-props
-  eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
+  eventKey: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
 };
 
 export default PanelContent;

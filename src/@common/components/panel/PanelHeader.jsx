@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { CTX } from "./Store";
+import { PanelContext } from "./PanelContext";
 
 function PanelHeader({ children, eventKey }) {
-  const [activeIndex, setActiveIndex] = useContext(CTX);
+  const { activeIndex, setActiveIndex } = useContext(PanelContext);
 
   const panelClasses = classNames("panelHeader", {
     panelHeaderActive: eventKey === activeIndex,
