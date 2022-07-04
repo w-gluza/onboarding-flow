@@ -22,7 +22,7 @@ function PanelHeader({ children, eventKey }) {
       onClick={() => handleClick(eventKey)}
       onKeyPress={() => handleClick(eventKey)}
     >
-      {children} <p>Icon</p>
+      {children}
     </div>
   );
 }

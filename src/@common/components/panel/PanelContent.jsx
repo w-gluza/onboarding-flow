@@ -31,7 +31,7 @@ function PanelContent(props) {
 
   return (
     <div id={id} className="panelContent" style={style}>
-      <p>{children}</p>
+      {children}
     </div>
   );
 }

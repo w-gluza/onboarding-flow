@@ -11,14 +11,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   background-color: var(--color-brand-bright);
   margin: var(--spacing-md);
   padding: var(--spacing-sm);
   border-radius: var(--border-radius-sm);
 }
-
-.panels-container {
-  width: 100%;
-}
-

@@ -1,15 +1,13 @@
 import React from "react";
-import "./WelcomeScreen.css";
 
 function WelcomeScreen() {
   return (
-    <div className="welcome-screen">
-      <p>KYC & Due Dilligence</p>
-      <h1>Add new customer</h1>
+    <article className="padding-md">
       <p>
-        Estimated time: <span className="text--bold">10 minutes</span>
+        You need to upload and complete KYC & Due Dilligence. Input your basic information about the customer and add
+        the UBO. Upload KYC documents and add Due Dilligence.
       </p>
-    </div>
+    </article>
   );
 }
 

@@ -1,6 +1,6 @@
 import React from "react";
 import "./FAQ.css";
-import Accordion from "../../../@common/components/panel/PanelGroup";
+import PanelGroup from "../../../@common/components/panel/PanelGroup";
 import Item from "../../../@common/components/panel/PanelContainer";
 import Toggle from "../../../@common/components/panel/PanelHeader";
 import Collapse from "../../../@common/components/panel/PanelContent";
@@ -16,16 +16,14 @@ function FAQ() {
           Here you will find instruction on how to complete the KYC and Due Dilligence step by step. If you still have
           questions, let us know.
         </p>
-        <div className="panels-container">
-          <Accordion>
-            {faqQuestions.map(({ question, answer }, index) => (
-              <Item key={question}>
-                <Toggle eventKey={index}>{question}</Toggle>
-                <Collapse eventKey={index}>{answer}</Collapse>
-              </Item>
-            ))}
-          </Accordion>
-        </div>
+        <PanelGroup>
+          {faqQuestions.map(({ question, answer }, index) => (
+            <Item key={question}>
+              <Toggle eventKey={index}>{question}</Toggle>
+              <Collapse eventKey={index}>{answer}</Collapse>
+            </Item>
+          ))}
+        </PanelGroup>
       </section>
     </section>
   );

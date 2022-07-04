@@ -2,29 +2,31 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Field } from "formik";
 
-function FormFieldOptions({ name, label, touched, error, isRequired, options }) {
+function FormFieldSelect({ name, label, touched, error, isRequired, options }) {
   return (
-    <>
+    <div className="form-field">
       <label className="text--xs" htmlFor={name}>
         {label}
         {isRequired && <span>&#42;</span>}
       </label>
       <Field name={name} as="select" className="field">
         {options.map((option) => (
-          <option value={option}>{option}</option>
+          <option key={option} value={option}>
+            {option}
+          </option>
         ))}
       </Field>
-      <span style={{ color: "red" }}>{touched && !!error && <div>{error}</div>}</span>
-    </>
+      <div className="form-validation">{touched && !!error && error}</div>
+    </div>
   );
 }
 
-FormFieldOptions.defaultProps = {
+FormFieldSelect.defaultProps = {
   touched: false,
   error: "",
 };
 
-FormFieldOptions.propTypes = {
+FormFieldSelect.propTypes = {
   name: PropTypes.string.isRequired,
   label: PropTypes.string.isRequired,
   touched: PropTypes.bool,
@@ -33,4 +35,4 @@ FormFieldOptions.propTypes = {
   options: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
-export default FormFieldOptions;
+export default FormFieldSelect;

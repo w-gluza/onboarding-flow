@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Field } from "formik";
-import "./FormField.css";
 
 function FormField({ name, label, touched, error, isRequired }) {
   return (
@@ -11,7 +10,7 @@ function FormField({ name, label, touched, error, isRequired }) {
         {isRequired && <span>&#42;</span>}
       </label>
       <Field className="field" name={name} />
-      <div className="validation-message">{touched && !!error && error}</div>
+      <div className="form-validation">{touched && !!error && error}</div>
     </div>
   );
 }
