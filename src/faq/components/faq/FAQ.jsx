@@ -1,5 +1,4 @@
 import React from "react";
-import "./FAQ.css";
 import PanelGroup from "../../../@common/components/panel/PanelGroup";
 import Item from "../../../@common/components/panel/PanelContainer";
 import Toggle from "../../../@common/components/panel/PanelHeader";

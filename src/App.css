@@ -24,6 +24,11 @@ body {
   height: 100%;
 }
 
+input,
+select {
+  all: unset;
+}
+
 :root {
   /* Typography */
 
@@ -38,10 +43,10 @@ body {
 
   /* Spacing */
 
-  --spacing-xs: 0.75rem;
-  --spacing-sm: 1rem;
+  --spacing-xs: 0.625rem;
+  --spacing-sm: 1.25rem;
   --spacing-md: 2.25rem;
-  --spacing-lg: 3.5rem;
+  --spacing-lg: 2.625rem;
   --spacing-xl: 7rem;
 
   /* Grids and Layouts */
@@ -123,6 +128,7 @@ h4 {
 
 h1 {
   font-size: var(--text-xl);
+  margin-bottom: var(--spacing-md);
 }
 
 h2 {
@@ -135,10 +141,16 @@ h3 {
 
 h4 {
   font-size: var(--text-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 h5 {
   font-size: var(--text-sm);
+  margin-bottom: var(--spacing-xs);
+}
+
+p {
+  margin-bottom: var(--spacing-sm);
 }
 
 .text--primary {
@@ -253,4 +265,44 @@ h5 {
 
 .padding-md {
   padding: var(--spacing-md);
+}
+
+/* ----- Input Field ----- */
+
+.field {
+  box-sizing: border-box;
+  width: 100%;
+  padding: var(--spacing-xs);
+  display: inline-block;
+  border: 1px solid var(--color-gray);
+  border-radius: var(--border-radius-xs);
+  margin-top: var(--spacing-xs);
+  height: var(--spacing-lg);
+}
+
+/* ----- Scroll behaviour ----- */
+
+.onboarding-section {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-primary);
+  height: 100vh;
+}
+
+.faq-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--color-brand-bright);
+  margin: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
 }

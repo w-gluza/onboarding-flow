@@ -13,7 +13,7 @@ import CustomerApproval from "../components/customer-approval/CustomerApproval";
 
 function OnboardingFlow() {
   return (
-    <section>
+    <section className="onboarding-section">
       <Intro />
       <PanelGroup>
         <SinglePanel id="1" iconName="one" headingTitle="Welcome">

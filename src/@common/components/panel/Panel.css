@@ -1,9 +1,6 @@
-.panelGroup {
-    padding: var(--spacing-sm) 0;
-}
-
 .panelContainer {
-    margin-bottom: var(--spacing-sm);
+    margin: var(--spacing-sm);
+    margin-top: 0;
     background-color: var(--color-white);
     padding: var(--spacing-sm);
     border-radius: var(--border-radius-sm);
