@@ -3,7 +3,6 @@ import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { US_ZIP, URL } from "../../utils/validationHelpers";
 import FormField from "../../../@common/components/form/form-field/FormField";
-import FormFieldSelect from "../../../@common/components/form/form-field-select/FormFieldSelect";
 import Button from "../../../@common/components/button/Button";
 import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
@@ -46,9 +45,10 @@ function CompanyDetails() {
           <Form className="full-width">
             <div className="form-fields">
               <FormField name="company" label="Company" touched={touched.company} error={errors.company} isRequired />
-              <FormFieldSelect
+              <FormField
                 name="country"
                 label="Country"
+                type="select"
                 touched={touched.country}
                 error={errors.country}
                 options={["AU", "IRL", "GB", "US"]}
