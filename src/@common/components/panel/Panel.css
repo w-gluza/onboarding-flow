@@ -1,0 +1,25 @@
+.panelGroup {
+    padding: 16px 0px;
+}
+
+.panelContainer {
+    background: #fff;
+    padding: 24px;
+    border-radius: 25px;
+    margin-bottom: 16px;
+}
+
+.panelHeader {
+    cursor: pointer;
+    color: grey;
+}
+
+.panelHeaderActive {
+    color: black;
+}
+
+.panelContent {
+    height: 0;
+    overflow: hidden;
+    transition: height 200ms ease-in-out;
+}
