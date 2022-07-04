@@ -5,11 +5,11 @@ import { Field } from "formik";
 function FormFieldOptions({ name, label, touched, error, isRequired, options }) {
   return (
     <>
-      <p>
+      <label className="text--xs" htmlFor={name}>
         {label}
         {isRequired && <span>&#42;</span>}
-      </p>
-      <Field name={name} as="select">
+      </label>
+      <Field name={name} as="select" className="field">
         {options.map((option) => (
           <option value={option}>{option}</option>
         ))}
