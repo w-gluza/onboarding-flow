@@ -1,11 +1,11 @@
 import React from "react";
-import { ReactComponent as Logo } from "../../assets/Logo.svg";
+import Icon from "../../assets/icons";
 import "./SideNav.css";
 
 function SideNav() {
   return (
     <nav className="nav">
-      <Logo className="logo" />
+      <Icon name="logo" alt="logo" className="logo" />
     </nav>
   );
 }

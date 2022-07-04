@@ -1,4 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:300,500");
+@font-face {
+  font-family: "CircularBook";
+  src: local("CircularStd-Book"), url("./@common/assets/fonts/CircularStd-Book.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "CircularLight";
+  src: local("CircularStd-Light"), url("./@common/assets/fonts/CircularStd-Light.otf") format("truetype");
+}
 
 *,
 *::before,
@@ -19,9 +27,8 @@ body {
 :root {
   /* Typography */
 
-  --font-primary: "Montserrat", Helvetica, Arial, sans-serif;
-  --font-bold: 500;
-  --font-regular: 300;
+  --font-bold: "CircularBook", Helvetica, Arial, sans-serif;
+  --font-light: "CircularLight", Helvetica, Arial, sans-serif;
 
   --text-xs: 0.875rem;
   --text-sm: 1rem;
@@ -55,6 +62,7 @@ body {
   --color-light: #f4f2f0;
   --color-white: #fff;
   --color-dark: #1e1e1e;
+  --color-gray: #7e7e7e;
 
   --color-success: #195c56;
   --color-info: #17a2b8;
@@ -101,7 +109,7 @@ body {
 
 body {
   font-size: var(--text-sm);
-  font-family: var(--font-primary);
+  font-family: var(--font-light);
   color: var(--color-dark);
 }
 
@@ -110,7 +118,7 @@ h2,
 h3,
 h4 {
   color: var(--color-dark);
-  font-weight: var(--font-bold);
+  font-family: var(--font-bold);
 }
 
 h1 {
@@ -142,7 +150,7 @@ h5 {
 }
 
 .text--bold {
-  font-weight: var(--font-bold);
+  font-family: var(--font-bold);
 }
 
 .text--xs {
@@ -156,7 +164,7 @@ h5 {
   position: relative;
   white-space: nowrap;
   text-decoration: none;
-  font-weight: var(--font-bold);
+  font-family: var(--font-bold);
 
   padding: var(--spacing-xs) var(--spacing-lg);
   border-radius: var(--btn-radius);
@@ -180,6 +188,13 @@ h5 {
   color: var(--color-primary);
 }
 
+.button-group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
 /* ----- Icons ----- */
 
 .icon-sm {
@@ -197,10 +212,45 @@ h5 {
   max-height: var(--icon-lg);
 }
 
+/* ----- Forms ----- */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.field {
+  width: 100%;
+  min-height: var(--spacing-md);
+  border-radius: var(--border-radius-xs);
+  margin-top: var(--spacing-xs);
+}
+
+.form-validation {
+  color: var(--color-danger);
+  min-height: var(--spacing-sm);
+  font-size: var(--text-xs);
+}
+
+.form-heading {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--gap-sm);
+}
+
+/* ----- Utils ----- */
+
 .full-width {
   width: var(--full-width);
 }
 
 .full-height {
   width: var(--full-height);
+}
+
+.padding-md {
+  padding: var(--spacing-md);
 }
