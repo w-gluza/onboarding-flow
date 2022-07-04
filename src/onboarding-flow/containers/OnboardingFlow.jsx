@@ -1,34 +1,44 @@
 import React from "react";
-import FormHeading from "../../@common/components/form/form-heading/FormHeading";
 import Intro from "../components/intro/Intro";
-import WelcomeScreen from "../components/welcome-screen/WelcomeScreen";
 import PanelGroup from "../../@common/components/panel/PanelGroup";
-import Item from "../../@common/components/panel/PanelContainer";
-import Toggle from "../../@common/components/panel/PanelHeader";
-import Collapse from "../../@common/components/panel/PanelContent";
+import SinglePanel from "../components/single-panel/SinglePanel";
+
+// panels
+import WelcomeScreen from "../components/welcome-screen/WelcomeScreen";
 import CompanyDetails from "../components/company-details/CompanyDetails";
+import UltimateBeneficialOwner from "../components/ultimate-beneficial-owner/UltimateBeneficialOwner";
+import BusinessNature from "../components/business-nature/BusinessNature";
+import EstimatedBusinessVolume from "../components/estimated-business-volume/EstimatedBusinessVolume";
+import CustomerApproval from "../components/customer-approval/CustomerApproval";
 
 function OnboardingFlow() {
   return (
     <section>
       <Intro />
       <PanelGroup>
-        <Item key="1">
-          <Toggle eventKey="1">
-            <FormHeading name="one" text="Welcome" />
-          </Toggle>
-          <Collapse eventKey="1">
-            <WelcomeScreen />
-          </Collapse>
-        </Item>
-        <Item key="2">
-          <Toggle eventKey="2">
-            <FormHeading name="two" text="Company Details" />
-          </Toggle>
-          <Collapse eventKey="2">
-            <CompanyDetails />
-          </Collapse>
-        </Item>
+        <SinglePanel id="1" iconName="one" headingTitle="Welcome">
+          <WelcomeScreen />
+        </SinglePanel>
+
+        <SinglePanel id="2" iconName="two" headingTitle="Company details">
+          <CompanyDetails />
+        </SinglePanel>
+
+        <SinglePanel id="3" iconName="three" headingTitle="Ultimate beneficial owner(s)">
+          <UltimateBeneficialOwner />
+        </SinglePanel>
+
+        <SinglePanel id="4" iconName="four" headingTitle="Nature of business">
+          <BusinessNature />
+        </SinglePanel>
+
+        <SinglePanel id="5" iconName="five" headingTitle="Estimated monthly volume">
+          <EstimatedBusinessVolume />
+        </SinglePanel>
+
+        <SinglePanel id="6" iconName="six" headingTitle="Customer approval">
+          <CustomerApproval />
+        </SinglePanel>
       </PanelGroup>
     </section>
   );
