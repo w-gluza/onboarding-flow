@@ -2,8 +2,13 @@ import React from "react";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { US_ZIP, URL } from "../../utils/validationHelpers";
-import FormField from "../../../@common/components/form/FormField";
+import FormField from "../../../@common/components/form/form-field/FormField";
 import FormFieldSelect from "../../../@common/components/form/form-field-select/FormFieldSelect";
+import FormHeading from "../../../@common/components/form/form-heading/FormHeading";
+import Button from "../../../@common/components/button/Button";
+import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
+import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
+import "./CompanyDetails.css";
 
 const CompanyDetailsMessagesSchema = Yup.object().shape({
   company: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
@@ -29,8 +34,7 @@ const CompanyDetailsInitialValues = {
 
 function CompanyDetails() {
   return (
-    <div>
-      <h1>Company Details</h1>
+    <article className="company-details">
       <Formik
         initialValues={CompanyDetailsInitialValues}
         validationSchema={CompanyDetailsMessagesSchema}
@@ -40,53 +44,59 @@ function CompanyDetails() {
         }}
       >
         {({ errors, touched, isValid, dirty }) => (
-          <Form>
-            <FormField name="company" label="Company" touched={touched.company} error={errors.company} isRequired />
-            <FormFieldSelect
-              name="country"
-              label="Country"
-              touched={touched.country}
-              error={errors.country}
-              options={["AU", "IRL", "GB", "US"]}
-              isRequired
-            />
-            <FormField name="address" label="Address" touched={touched.address} error={errors.address} isRequired />
-            <FormField
-              name="apartment"
-              label="Apartment, suite etc."
-              touched={touched.apartment}
-              error={errors.apartment}
-              isRequired={false}
-            />
-            <FormField
-              name="zipCode"
-              label="Postal code/Zip"
-              touched={touched.zipCode}
-              error={errors.zipCode}
-              isRequired
-            />
-            <FormField name="city" label="City" touched={touched.city} error={errors.city} isRequired />
-            <FormField
-              name="website"
-              label="Website"
-              touched={touched.website}
-              error={errors.website}
-              isRequired={false}
-            />
-            <FormField
-              name="regNumber"
-              label="Company Registration from official register"
-              touched={touched.regNumber}
-              error={errors.regNumber}
-              isRequired
-            />
-            <button type="submit" disabled={!(isValid && dirty)}>
-              Submit
-            </button>
-          </Form>
+          <div className="form-container">
+            <FormHeading name="one" text="Company Details" />
+            <Form className="full-width">
+              <div className="form-fields">
+                <FormField name="company" label="Company" touched={touched.company} error={errors.company} isRequired />
+                <FormFieldSelect
+                  name="country"
+                  label="Country"
+                  touched={touched.country}
+                  error={errors.country}
+                  options={["AU", "IRL", "GB", "US"]}
+                  isRequired
+                />
+                <FormField name="address" label="Address" touched={touched.address} error={errors.address} isRequired />
+                <FormField
+                  name="apartment"
+                  label="Apartment, suite etc."
+                  touched={touched.apartment}
+                  error={errors.apartment}
+                  isRequired={false}
+                />
+                <FormField
+                  name="zipCode"
+                  label="Postal code/Zip"
+                  touched={touched.zipCode}
+                  error={errors.zipCode}
+                  isRequired
+                />
+                <FormField name="city" label="City" touched={touched.city} error={errors.city} isRequired />
+                <FormField
+                  name="website"
+                  label="Website"
+                  touched={touched.website}
+                  error={errors.website}
+                  isRequired={false}
+                />
+                <FormField
+                  name="regNumber"
+                  label="Company Registration"
+                  touched={touched.regNumber}
+                  error={errors.regNumber}
+                  isRequired
+                />
+              </div>
+              <ButtonGroup>
+                <Button text="Back" variant="secondary" onClick={() => console.log("back")} />
+                <FormSubmit text="Next" variant="primary" disabled={!(isValid && dirty)} />
+              </ButtonGroup>
+            </Form>
+          </div>
         )}
       </Formik>
-    </div>
+    </article>
   );
 }
 
