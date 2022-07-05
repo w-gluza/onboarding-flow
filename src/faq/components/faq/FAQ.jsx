@@ -20,10 +20,10 @@ function FAQ() {
         <PanelGroup>
           {faqQuestions.map(({ question, answer }, index) => (
             <PanelContainer key={question}>
-              <PanelHeader eventKey={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex}>
+              <PanelHeader eventKey={index + 50} activeIndex={activeIndex} setActiveIndex={setActiveIndex}>
                 {question}
               </PanelHeader>
-              <PanelContent eventKey={index} activeIndex={activeIndex}>
+              <PanelContent eventKey={index + 50} activeIndex={activeIndex}>
                 {answer}
               </PanelContent>
             </PanelContainer>
