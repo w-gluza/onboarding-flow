@@ -1,4 +1,4 @@
-.panelContainer {
+.panel-container {
     margin: var(--spacing-sm);
     margin-top: 0;
     background-color: var(--color-white);
@@ -6,16 +6,16 @@
     border-radius: var(--border-radius-sm);
 }
 
-.panelHeader {
+.panel-header {
     cursor: pointer;
     color: var(--color-gray);
 }
 
-.panelHeaderActive {
+.panel-header-active {
     color: var(--color-dark);
 }
 
-.panelContent {
+.panel-content {
     height: 0;
     overflow: hidden;
     transition: height 200ms ease-in-out;

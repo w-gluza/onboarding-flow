@@ -12,7 +12,7 @@ export function getHeight(element) {
 
 function PanelContent({ children, eventKey, activeIndex }) {
   const [style, setStyle] = useState(null);
-  const id = `panelContent" + ${eventKey + 1}`;
+  const id = `"panel-content" + ${eventKey + 1}`;
 
   // * "useLayoutEffect - use this if you need to perform measurements" https://kentcdodds.com/blog/useeffect-vs-uselayouteffect
   useLayoutEffect(() => {
@@ -26,7 +26,7 @@ function PanelContent({ children, eventKey, activeIndex }) {
   }, [eventKey, activeIndex]);
 
   return (
-    <div id={id} className="panelContent" style={style}>
+    <div id={id} className="panel-content" style={style}>
       {children}
     </div>
   );

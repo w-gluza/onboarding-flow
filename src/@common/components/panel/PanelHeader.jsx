@@ -3,8 +3,8 @@ import PropTypes from "prop-types";
 import classNames from "classnames";
 
 function PanelHeader({ children, eventKey, activeIndex, setActiveIndex }) {
-  const panelClasses = classNames("panelHeader", {
-    panelHeaderActive: eventKey === activeIndex,
+  const panelClasses = classNames("panel-header", {
+    "panel-header-active": eventKey === activeIndex,
   });
 
   const handleClick = (e) => {

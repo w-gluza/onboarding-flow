@@ -6,7 +6,6 @@ import FormField from "../../../@common/components/form/form-field/FormField";
 import Button from "../../../@common/components/button/Button";
 import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
-import "./CompanyDetails.css";
 
 const CompanyDetailsMessagesSchema = Yup.object().shape({
   company: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
@@ -89,6 +88,7 @@ function CompanyDetails() {
               <Button text="Back" variant="secondary" onClick={() => console.log("back")} />
               <FormSubmit text="Next" variant="primary" disabled={!(isValid && dirty)} />
             </ButtonGroup>
+            <p>Items with an asterisk (*) are mandatory.</p>
           </Form>
         )}
       </Formik>

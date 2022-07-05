@@ -1,8 +1,0 @@
-.form-fields {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-column-gap: var(--spacing-sm);
-  grid-row-gap: var(--spacing-xs);
-  width: 100%;
-  padding: var(--spacing-sm) var(--spacing-md);
-}

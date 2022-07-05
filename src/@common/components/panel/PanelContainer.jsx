@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function PanelContainer({ children }) {
-  return <div className="panelContainer">{children}</div>;
+  return <div className="panel-container">{children}</div>;
 }
 
 PanelContainer.propTypes = {

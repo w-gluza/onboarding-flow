@@ -122,7 +122,6 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--color-dark);
   font-family: var(--font-bold);
 }
 
@@ -142,11 +141,6 @@ h3 {
 h4 {
   font-size: var(--text-md);
   margin-bottom: var(--spacing-sm);
-}
-
-h5 {
-  font-size: var(--text-sm);
-  margin-bottom: var(--spacing-xs);
 }
 
 p {
@@ -200,11 +194,12 @@ p {
   color: var(--color-primary);
 }
 
-.button-group {
+.btn-group {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: var(--gap-sm);
+  margin: var(--spacing-sm) 0;
 }
 
 /* ----- Icons ----- */
@@ -225,6 +220,15 @@ p {
 }
 
 /* ----- Forms ----- */
+
+.form-fields {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: var(--spacing-sm);
+  grid-row-gap: var(--spacing-xs);
+  width: 100%;
+  padding: 0 var(--spacing-md);
+}
 
 .form-field {
   display: flex;
@@ -262,11 +266,9 @@ p {
 .full-height {
   width: var(--full-height);
 }
-
 .padding-md {
   padding: var(--spacing-md);
 }
-
 /* ----- Input Field ----- */
 
 .field {
@@ -278,6 +280,10 @@ p {
   border-radius: var(--border-radius-xs);
   margin-top: var(--spacing-xs);
   height: var(--spacing-lg);
+}
+
+.field:focus {
+  border: 2px solid var(--color-primary);
 }
 
 /* ----- Scroll behaviour ----- */

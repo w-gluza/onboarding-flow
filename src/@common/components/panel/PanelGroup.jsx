@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import "./Panel.css";
 
 function PanelGroup({ children }) {
-  return <section className="panelGroup">{children}</section>;
+  return <section className="panel-group">{children}</section>;
 }
 
 PanelGroup.propTypes = {
