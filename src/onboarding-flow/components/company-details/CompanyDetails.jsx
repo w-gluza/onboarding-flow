@@ -28,6 +28,8 @@ function CompanyDetails({ id, setActiveIndex, handleStepUpdate }) {
         initialValues={CompanyDetailsInitialValues}
         validationSchema={CompanyDetailsMessagesSchema}
         onSubmit={(values, { resetForm }) => {
+          // eslint-disable-next-line no-console
+          console.log("companyDetailsCompleted", values);
           handleStepUpdate(step);
           setActiveIndex(id + 1);
           resetForm();

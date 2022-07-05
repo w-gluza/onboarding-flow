@@ -23,7 +23,8 @@ function BusinessNature({ id, setActiveIndex, handleStepUpdate }) {
         initialValues={BusinessNatureInitialValues}
         validationSchema={BusinessNatureMessagesSchema}
         onSubmit={(values, { resetForm }) => {
-          // console.log(values);
+          // eslint-disable-next-line no-console
+          console.log("businessNatureCompleted", values);
           handleStepUpdate(step);
           setActiveIndex(id + 1);
           resetForm();

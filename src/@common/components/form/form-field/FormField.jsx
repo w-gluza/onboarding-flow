@@ -34,7 +34,8 @@ FormField.propTypes = {
   touched: PropTypes.bool,
   error: PropTypes.string,
   isRequired: PropTypes.bool.isRequired,
-  type: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/require-default-props
+  type: PropTypes.string,
   options: PropTypes.arrayOf(PropTypes.string),
 };
 

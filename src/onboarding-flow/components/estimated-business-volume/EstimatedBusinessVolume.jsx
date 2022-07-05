@@ -23,6 +23,8 @@ function EstimatedBusinessVolume({ id, setActiveIndex, handleStepUpdate }) {
         initialValues={EstimatedBusinessVolumeInitialValues}
         validationSchema={EstimatedBusinessVolumeMessagesSchema}
         onSubmit={(values, { resetForm }) => {
+          // eslint-disable-next-line no-console
+          console.log("estimatedMonthlyVolume", values);
           setActiveIndex(id + 1);
           handleStepUpdate(step);
           resetForm();

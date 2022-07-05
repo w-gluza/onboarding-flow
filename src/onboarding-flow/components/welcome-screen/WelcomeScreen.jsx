@@ -11,6 +11,8 @@ function WelcomeScreen({ handleStepUpdate, setActiveIndex, id }) {
   const onNext = () => {
     setActiveIndex(id + 1);
     handleStepUpdate(step);
+    // eslint-disable-next-line no-console
+    console.log("welcomeStepCompleted");
   };
 
   return (

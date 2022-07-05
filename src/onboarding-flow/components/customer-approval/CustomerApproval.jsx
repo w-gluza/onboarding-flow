@@ -7,7 +7,8 @@ import stepsInitialValues from "../../utils/formInitialValues";
 function CustomerApproval({ setActiveIndex, handleStepUpdate }) {
   const onClose = () => {
     setActiveIndex(0);
-
+    // eslint-disable-next-line no-console
+    console.log("Form submitted and stepper reset");
     // resetting stepper
     handleStepUpdate(stepsInitialValues);
   };
