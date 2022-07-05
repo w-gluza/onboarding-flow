@@ -1,23 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import { US_ZIP } from "../../utils/validationHelpers";
 import FormField from "../../../@common/components/form/form-field/FormField";
 import Button from "../../../@common/components/button/Button";
 import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
-
-const UltimateBeneficialOwnerMessagesSchema = Yup.object().shape({
-  fullName: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  role: Yup.string().min(2, "Too Short!").max(56, "Too Long!").required("Required"),
-  address: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  apartment: Yup.string().min(1, "Too Short!").max(10, "Too Long!"),
-  zipCode: Yup.string().matches(US_ZIP, "Enter a valid US zip code"),
-  city: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  email: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  utilityBill: Yup.string().min(5, "Too Short!").max(10, "Too Long!").required("Required"),
-});
+import { UltimateBeneficialOwnerMessagesSchema } from "../../utils/validationSchemas";
 
 const UltimateBeneficialOwnerInitialValues = {
   fullName: "",
@@ -27,6 +15,7 @@ const UltimateBeneficialOwnerInitialValues = {
   zipCode: "",
   city: "",
   email: "",
+  passport: "",
   utilityBill: "",
 };
 
@@ -54,8 +43,8 @@ function UltimateBeneficialOwner({ id, setActiveIndex, handleStepUpdate }) {
         }}
       >
         {({ errors, touched, isValid, dirty }) => (
-          <Form className="full-width">
-            <div className="form-fields">
+          <Form className="form-container">
+            <div className="form-fields-double">
               <FormField
                 name="fullName"
                 label="Full name"
@@ -69,7 +58,7 @@ function UltimateBeneficialOwner({ id, setActiveIndex, handleStepUpdate }) {
                 type="select"
                 touched={touched.country}
                 error={errors.country}
-                options={["AU", "IRL", "GB", "US"]}
+                options={["Individual", "Foundation", "Trust", "Company"]}
                 isRequired
               />
               <FormField name="address" label="Address" touched={touched.address} error={errors.address} isRequired />

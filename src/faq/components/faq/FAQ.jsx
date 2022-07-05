@@ -12,7 +12,7 @@ function FAQ() {
     <section className="faq-section">
       <h3 className="text--bright">FAQ</h3>
       <section className="faq-contents">
-        <h4 className="text--bold">Get help with the KYC and Due Dilligence</h4>
+        <h4 className="text--bold text--primary">Get help with the KYC and Due Dilligence</h4>
         <p>
           Here you will find instruction on how to complete the KYC and Due Dilligence step by step. If you still have
           questions, let us know.

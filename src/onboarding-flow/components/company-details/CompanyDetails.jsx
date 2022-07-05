@@ -1,23 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
-import { US_ZIP, URL } from "../../utils/validationHelpers";
 import FormField from "../../../@common/components/form/form-field/FormField";
 import Button from "../../../@common/components/button/Button";
 import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
-
-const CompanyDetailsMessagesSchema = Yup.object().shape({
-  company: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  country: Yup.string().min(2, "Too Short!").max(56, "Too Long!").required("Required"),
-  address: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  apartment: Yup.string().min(1, "Too Short!").max(10, "Too Long!"),
-  zipCode: Yup.string().matches(US_ZIP, "Enter a valid US zip code"),
-  city: Yup.string().min(2, "Too Short!").max(50, "Too Long!").required("Required"),
-  website: Yup.string().matches(URL, "Enter a valid url"),
-  regNumber: Yup.string().min(5, "Too Short!").max(10, "Too Long!").required("Required"),
-});
+import { CompanyDetailsMessagesSchema } from "../../utils/validationSchemas";
 
 const CompanyDetailsInitialValues = {
   company: "",
@@ -46,8 +34,8 @@ function CompanyDetails({ id, setActiveIndex, handleStepUpdate }) {
         }}
       >
         {({ errors, touched, isValid, dirty }) => (
-          <Form className="full-width">
-            <div className="form-fields">
+          <Form className="form-container">
+            <div className="form-fields-double">
               <FormField name="company" label="Company" touched={touched.company} error={errors.company} isRequired />
               <FormField
                 name="country"

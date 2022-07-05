@@ -1,16 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import FormField from "../../../@common/components/form/form-field/FormField";
 import Button from "../../../@common/components/button/Button";
 import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
-
-const EstimatedBusinessVolumeMessagesSchema = Yup.object().shape({
-  estimatedMonthlyVolume: Yup.string().min(2, "Too Short!").max(56, "Too Long!").required("Required"),
-  estimatedTransactionSize: Yup.string().min(2, "Too Short!").max(56, "Too Long!").required("Required"),
-});
+import { EstimatedBusinessVolumeMessagesSchema } from "../../utils/validationSchemas";
 
 const EstimatedBusinessVolumeInitialValues = {
   estimatedMonthlyVolume: "",
@@ -34,12 +29,11 @@ function EstimatedBusinessVolume({ id, setActiveIndex, handleStepUpdate }) {
         }}
       >
         {({ errors, touched, isValid, dirty }) => (
-          <Form className="full-width">
-            <div className="form-fields">
+          <Form className="form-container">
+            <div className="form-fields-single">
               <FormField
                 name="estimatedMonthlyVolume"
                 label="Estimated monthly volume"
-                type="select"
                 touched={touched.country}
                 error={errors.country}
                 options={["AU", "IRL", "GB", "US"]}
@@ -48,7 +42,6 @@ function EstimatedBusinessVolume({ id, setActiveIndex, handleStepUpdate }) {
               <FormField
                 name="estimatedTransactionSize"
                 label="Estimated transaction size"
-                type="select"
                 touched={touched.country}
                 error={errors.country}
                 options={["AU", "IRL", "GB", "US"]}

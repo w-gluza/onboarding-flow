@@ -1,15 +1,11 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
-import * as Yup from "yup";
 import FormField from "../../../@common/components/form/form-field/FormField";
 import Button from "../../../@common/components/button/Button";
 import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 import FormSubmit from "../../../@common/components/form/form-submit/FormSubmit";
-
-const BusinessNatureMessagesSchema = Yup.object().shape({
-  businessNature: Yup.string().min(2, "Too Short!").max(56, "Too Long!").required("Required"),
-});
+import { BusinessNatureMessagesSchema } from "../../utils/validationSchemas";
 
 const BusinessNatureInitialValues = {
   businessNature: "",
@@ -22,7 +18,7 @@ function BusinessNature({ id, setActiveIndex, handleStepUpdate }) {
 
   return (
     <article className="spacing-md">
-      <p>What is the nature of the business transaction?</p>
+      <p>What is the nature of the business?</p>
       <Formik
         initialValues={BusinessNatureInitialValues}
         validationSchema={BusinessNatureMessagesSchema}
@@ -34,15 +30,15 @@ function BusinessNature({ id, setActiveIndex, handleStepUpdate }) {
         }}
       >
         {({ errors, touched, isValid, dirty }) => (
-          <Form className="full-width">
-            <div className="form-fields">
+          <Form className="form-container">
+            <div className="form-fields-single">
               <FormField
                 name="businessNature"
                 label="Choose the type"
                 type="select"
                 touched={touched.country}
                 error={errors.country}
-                options={["AU", "IRL", "GB", "US"]}
+                options={["Private", "Government", "Service", "Manufacturing"]}
                 isRequired
               />
             </div>

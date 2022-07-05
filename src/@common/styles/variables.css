@@ -78,8 +78,4 @@
   --breakpoint-md: 720px;
   --breakpoint-lg: 1200px;
   --breakpoint-xl: 1440px;
-
-  /* Utils */
-  --full-width: 100%;
-  --full-height: 100%;
 }
