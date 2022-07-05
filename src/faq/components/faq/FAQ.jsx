@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import PanelGroup from "../../../@common/components/panel/PanelGroup";
-import Item from "../../../@common/components/panel/PanelContainer";
-import Toggle from "../../../@common/components/panel/PanelHeader";
-import Collapse from "../../../@common/components/panel/PanelContent";
+import PanelContainer from "../../../@common/components/panel/PanelContainer";
+import PanelHeader from "../../../@common/components/panel/PanelHeader";
+import PanelContent from "../../../@common/components/panel/PanelContent";
 import faqQuestions from "../../resources/resources";
 
 function FAQ() {
+  const [activeIndex, setActiveIndex] = useState(null);
+
   return (
     <section className="faq-section">
       <h3 className="text--bright">FAQ</h3>
@@ -17,10 +19,14 @@ function FAQ() {
         </p>
         <PanelGroup>
           {faqQuestions.map(({ question, answer }, index) => (
-            <Item key={question}>
-              <Toggle eventKey={index}>{question}</Toggle>
-              <Collapse eventKey={index}>{answer}</Collapse>
-            </Item>
+            <PanelContainer key={question}>
+              <PanelHeader eventKey={index} activeIndex={activeIndex} setActiveIndex={setActiveIndex}>
+                {question}
+              </PanelHeader>
+              <PanelContent eventKey={index} activeIndex={activeIndex}>
+                {answer}
+              </PanelContent>
+            </PanelContainer>
           ))}
         </PanelGroup>
       </section>

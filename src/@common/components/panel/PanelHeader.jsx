@@ -1,11 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import classNames from "classnames";
-import { PanelContext } from "./PanelContext";
 
-function PanelHeader({ children, eventKey }) {
-  const { activeIndex, setActiveIndex } = useContext(PanelContext);
-
+function PanelHeader({ children, eventKey, activeIndex, setActiveIndex }) {
   const panelClasses = classNames("panelHeader", {
     panelHeaderActive: eventKey === activeIndex,
   });
@@ -27,9 +24,15 @@ function PanelHeader({ children, eventKey }) {
   );
 }
 
+PanelHeader.defaultProps = {
+  activeIndex: null,
+};
+
 PanelHeader.propTypes = {
   children: PropTypes.node.isRequired,
   eventKey: PropTypes.number.isRequired,
+  activeIndex: PropTypes.number,
+  setActiveIndex: PropTypes.func.isRequired,
 };
 
 export default PanelHeader;

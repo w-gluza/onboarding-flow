@@ -16,28 +16,28 @@ function OnboardingFlow() {
     <section className="onboarding-section">
       <Intro />
       <PanelGroup>
-        <SinglePanel id="1" iconName="one" headingTitle="Welcome">
-          <WelcomeScreen />
+        <SinglePanel id={1} iconName="one" headingTitle="Welcome">
+          <WelcomeScreen id={1} />
         </SinglePanel>
 
-        <SinglePanel id="2" iconName="two" headingTitle="Company details">
-          <CompanyDetails />
+        <SinglePanel id={2} iconName="two" headingTitle="Company details">
+          <CompanyDetails id={1} />
         </SinglePanel>
 
-        <SinglePanel id="3" iconName="three" headingTitle="Ultimate beneficial owner(s)">
-          <UltimateBeneficialOwner />
+        <SinglePanel id={3} iconName="three" headingTitle="Ultimate beneficial owner(s)">
+          <UltimateBeneficialOwner id={1} />
         </SinglePanel>
 
-        <SinglePanel id="4" iconName="four" headingTitle="Nature of business">
-          <BusinessNature />
+        <SinglePanel id={4} iconName="four" headingTitle="Nature of business">
+          <BusinessNature id={1} />
         </SinglePanel>
 
-        <SinglePanel id="5" iconName="five" headingTitle="Estimated monthly volume">
-          <EstimatedBusinessVolume />
+        <SinglePanel id={5} iconName="five" headingTitle="Estimated monthly volume">
+          <EstimatedBusinessVolume id={1} />
         </SinglePanel>
 
-        <SinglePanel id="6" iconName="six" headingTitle="Customer approval">
-          <CustomerApproval />
+        <SinglePanel id={6} iconName="six" headingTitle="Customer approval">
+          <CustomerApproval id={1} />
         </SinglePanel>
       </PanelGroup>
     </section>
