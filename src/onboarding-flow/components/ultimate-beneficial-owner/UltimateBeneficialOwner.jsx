@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { US_ZIP } from "../../utils/validationHelpers";
@@ -29,7 +30,7 @@ const UltimateBeneficialOwnerInitialValues = {
   utilityBill: "",
 };
 
-function UltimateBeneficialOwner() {
+function UltimateBeneficialOwner({ id, setActiveIndex }) {
   return (
     <article className="padding-md">
       <p>Who is the Ultimate Beneficial Owner(s)?</p>
@@ -43,6 +44,7 @@ function UltimateBeneficialOwner() {
         validationSchema={UltimateBeneficialOwnerMessagesSchema}
         onSubmit={(values, { resetForm }) => {
           console.log(values);
+          setActiveIndex(id + 1);
           resetForm();
         }}
       >
@@ -104,7 +106,7 @@ function UltimateBeneficialOwner() {
               />
             </div>
             <ButtonGroup>
-              <Button text="Back" variant="secondary" onClick={() => console.log("back")} />
+              <Button text="Back" variant="secondary" onClick={() => setActiveIndex(id - 1)} />
               <FormSubmit text="Next" variant="primary" disabled={!(isValid && dirty)} />
             </ButtonGroup>
             <p>Items with an asterisk (*) are mandatory.</p>
@@ -114,5 +116,10 @@ function UltimateBeneficialOwner() {
     </article>
   );
 }
+
+UltimateBeneficialOwner.propTypes = {
+  id: PropTypes.number.isRequired,
+  setActiveIndex: PropTypes.func.isRequired,
+};
 
 export default UltimateBeneficialOwner;

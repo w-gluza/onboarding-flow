@@ -1,7 +1,7 @@
 const formInitialValues = {
   steps: {
-    welcomeStepCompleted: true,
-    companyDetailsCompleted: true,
+    welcomeStepCompleted: false,
+    companyDetailsCompleted: false,
     uboCompleted: false,
     businessNatureCompleted: false,
     estimatedMonthlyVolume: false,

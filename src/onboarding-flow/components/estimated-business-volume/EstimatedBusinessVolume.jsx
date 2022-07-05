@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormField from "../../../@common/components/form/form-field/FormField";
@@ -16,7 +17,7 @@ const EstimatedBusinessVolumeInitialValues = {
   estimatedTransactionSize: "",
 };
 
-function EstimatedBusinessVolume() {
+function EstimatedBusinessVolume({ id, setActiveIndex }) {
   return (
     <article className="padding-md">
       <p>What is the estimated monthly volume in € and what is the average transaction size in €?</p>
@@ -51,7 +52,7 @@ function EstimatedBusinessVolume() {
               />
             </div>
             <ButtonGroup>
-              <Button text="Back" variant="secondary" onClick={() => console.log("back")} />
+              <Button text="Back" variant="secondary" onClick={() => setActiveIndex(id - 1)} />
               <FormSubmit text="Next" variant="primary" disabled={!(isValid && dirty)} />
             </ButtonGroup>
             <p>Items with an asterisk (*) are mandatory.</p>
@@ -61,5 +62,10 @@ function EstimatedBusinessVolume() {
     </article>
   );
 }
+
+EstimatedBusinessVolume.propTypes = {
+  id: PropTypes.number.isRequired,
+  setActiveIndex: PropTypes.func.isRequired,
+};
 
 export default EstimatedBusinessVolume;

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import FormField from "../../../@common/components/form/form-field/FormField";
@@ -14,7 +15,7 @@ const BusinessNatureInitialValues = {
   businessNature: "",
 };
 
-function BusinessNature() {
+function BusinessNature({ id, setActiveIndex }) {
   return (
     <article className="padding-md">
       <p>What is the nature of the business transaction?</p>
@@ -40,7 +41,7 @@ function BusinessNature() {
               />
             </div>
             <ButtonGroup>
-              <Button text="Back" variant="secondary" onClick={() => console.log("back")} />
+              <Button text="Back" variant="secondary" onClick={() => setActiveIndex(id - 1)} />
               <FormSubmit text="Next" variant="primary" disabled={!(isValid && dirty)} />
             </ButtonGroup>
             <p>Items with an asterisk (*) are mandatory.</p>
@@ -50,5 +51,9 @@ function BusinessNature() {
     </article>
   );
 }
+BusinessNature.propTypes = {
+  id: PropTypes.number.isRequired,
+  setActiveIndex: PropTypes.func.isRequired,
+};
 
 export default BusinessNature;

@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import PropTypes from "prop-types";
 import Intro from "../components/intro/Intro";
 import PanelGroup from "../../@common/components/panel/PanelGroup";
 import SinglePanel from "../components/single-panel/SinglePanel";
-import getMaxCompletedStep from "../utils/getMaxCompletedStep";
 
 // panels
 import WelcomeScreen from "../components/welcome-screen/WelcomeScreen";
@@ -12,11 +12,8 @@ import BusinessNature from "../components/business-nature/BusinessNature";
 import EstimatedBusinessVolume from "../components/estimated-business-volume/EstimatedBusinessVolume";
 import CustomerApproval from "../components/customer-approval/CustomerApproval";
 
-function OnboardingFlow() {
+function OnboardingFlow({ handleStepUpdate }) {
   const [activeIndex, setActiveIndex] = useState(null);
-  useEffect(() => {
-    setActiveIndex(getMaxCompletedStep());
-  }, []);
 
   return (
     <section className="onboarding-section">
@@ -29,7 +26,7 @@ function OnboardingFlow() {
           iconName="one"
           headingTitle="Welcome"
         >
-          <WelcomeScreen />
+          <WelcomeScreen handleStepUpdate={handleStepUpdate} setActiveIndex={setActiveIndex} id={1} />
         </SinglePanel>
 
         <SinglePanel
@@ -39,7 +36,7 @@ function OnboardingFlow() {
           iconName="two"
           headingTitle="Company details"
         >
-          <CompanyDetails />
+          <CompanyDetails setActiveIndex={setActiveIndex} id={2} />
         </SinglePanel>
 
         <SinglePanel
@@ -49,7 +46,7 @@ function OnboardingFlow() {
           iconName="three"
           headingTitle="Ultimate beneficial owner(s)"
         >
-          <UltimateBeneficialOwner />
+          <UltimateBeneficialOwner setActiveIndex={setActiveIndex} id={3} />
         </SinglePanel>
 
         <SinglePanel
@@ -59,7 +56,7 @@ function OnboardingFlow() {
           iconName="four"
           headingTitle="Nature of business"
         >
-          <BusinessNature />
+          <BusinessNature setActiveIndex={setActiveIndex} id={4} />
         </SinglePanel>
 
         <SinglePanel
@@ -69,7 +66,7 @@ function OnboardingFlow() {
           iconName="five"
           headingTitle="Estimated monthly volume"
         >
-          <EstimatedBusinessVolume />
+          <EstimatedBusinessVolume setActiveIndex={setActiveIndex} id={5} />
         </SinglePanel>
 
         <SinglePanel
@@ -79,11 +76,15 @@ function OnboardingFlow() {
           iconName="six"
           headingTitle="Customer approval"
         >
-          <CustomerApproval />
+          <CustomerApproval setActiveIndex={setActiveIndex} />
         </SinglePanel>
       </PanelGroup>
     </section>
   );
 }
+
+OnboardingFlow.propTypes = {
+  handleStepUpdate: PropTypes.func.isRequired,
+};
 
 export default OnboardingFlow;

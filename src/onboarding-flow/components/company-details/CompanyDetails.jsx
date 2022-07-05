@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 import { Formik, Form } from "formik";
 import * as Yup from "yup";
 import { US_ZIP, URL } from "../../utils/validationHelpers";
@@ -29,14 +30,14 @@ const CompanyDetailsInitialValues = {
   regNumber: "",
 };
 
-function CompanyDetails() {
+function CompanyDetails({ id, setActiveIndex }) {
   return (
     <article className="padding-md">
       <Formik
         initialValues={CompanyDetailsInitialValues}
         validationSchema={CompanyDetailsMessagesSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
+          setActiveIndex(id + 1);
           resetForm();
         }}
       >
@@ -85,7 +86,7 @@ function CompanyDetails() {
               />
             </div>
             <ButtonGroup>
-              <Button text="Back" variant="secondary" onClick={() => console.log("back")} />
+              <Button text="Back" variant="secondary" onClick={() => setActiveIndex(id - 1)} />
               <FormSubmit text="Next" variant="primary" disabled={!(isValid && dirty)} />
             </ButtonGroup>
             <p>Items with an asterisk (*) are mandatory.</p>
@@ -95,5 +96,10 @@ function CompanyDetails() {
     </article>
   );
 }
+
+CompanyDetails.propTypes = {
+  id: PropTypes.number.isRequired,
+  setActiveIndex: PropTypes.func.isRequired,
+};
 
 export default CompanyDetails;

@@ -1,3 +1,3 @@
-import OnboardingFlow from "./containers/OnboardingFlow";
+import OnboardingFlowContainer from "./containers/OnboardingFlowContainer";
 
-export default OnboardingFlow;
+export default OnboardingFlowContainer;
