@@ -23,7 +23,7 @@ function BusinessNature({ id, setActiveIndex }) {
         initialValues={BusinessNatureInitialValues}
         validationSchema={BusinessNatureMessagesSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
+          // console.log(values);
           resetForm();
         }}
       >

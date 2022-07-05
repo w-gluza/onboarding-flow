@@ -25,7 +25,7 @@ function EstimatedBusinessVolume({ id, setActiveIndex }) {
         initialValues={EstimatedBusinessVolumeInitialValues}
         validationSchema={EstimatedBusinessVolumeMessagesSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
+          // console.log(values);
           resetForm();
         }}
       >

@@ -43,7 +43,7 @@ function UltimateBeneficialOwner({ id, setActiveIndex }) {
         initialValues={UltimateBeneficialOwnerInitialValues}
         validationSchema={UltimateBeneficialOwnerMessagesSchema}
         onSubmit={(values, { resetForm }) => {
-          console.log(values);
+          // console.log(values);
           setActiveIndex(id + 1);
           resetForm();
         }}
