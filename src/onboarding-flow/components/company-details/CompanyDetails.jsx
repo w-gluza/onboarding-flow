@@ -32,7 +32,7 @@ const CompanyDetailsInitialValues = {
 
 function CompanyDetails({ id, setActiveIndex }) {
   return (
-    <article className="padding-md">
+    <article className="spacing-md">
       <Formik
         initialValues={CompanyDetailsInitialValues}
         validationSchema={CompanyDetailsMessagesSchema}

@@ -32,7 +32,7 @@ const UltimateBeneficialOwnerInitialValues = {
 
 function UltimateBeneficialOwner({ id, setActiveIndex }) {
   return (
-    <article className="padding-md">
+    <article className="spacing-md">
       <p>Who is the Ultimate Beneficial Owner(s)?</p>
       <p>
         UBO of a legal entity are the natural persons who directly or indirectly hold or control the stake of at least

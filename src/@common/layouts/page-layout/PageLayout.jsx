@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 import SideNavLayout from "../side-nav-layout/SideNavLayout";
 import MainContainerLayout from "../main-container-layout/MainContainerLayout";
-import "./PageLayout.css";
 
 function PageLayout({ children }) {
   return (

@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "CircularBook";
+  src: local("CircularStd-Book"), url("../assets/fonts/CircularStd-Book.otf") format("truetype");
+}
+
+@font-face {
+  font-family: "CircularLight";
+  src: local("CircularStd-Light"), url("../assets/fonts/CircularStd-Light.otf") format("truetype");
+}
+
+:root {
+  /* Typography */
+
+  --font-bold: "CircularBook", Helvetica, Arial, sans-serif;
+  --font-light: "CircularLight", Helvetica, Arial, sans-serif;
+
+  --text-xs: 0.875rem;
+  --text-sm: 1rem;
+  --text-md: 1.5rem;
+  --text-lg: 2.375rem;
+  --text-xl: 3.5rem;
+
+  /* Spacing */
+
+  --spacing-xs: 0.625rem;
+  --spacing-sm: 1.25rem;
+  --spacing-md: 2.25rem;
+  --spacing-lg: 2.625rem;
+  --spacing-xl: 7rem;
+
+  /* Grids and Layouts */
+
+  --gap-xs: 0.75rem;
+  --gap-sm: 1rem;
+  --gap-md: 2.25rem;
+
+  /* Colors */
+
+  --color-primary: #195c56;
+
+  --color-brand-light: #d7ffe4;
+  --color-brand-bright: #5be695;
+  --color-brand-subtle: #7aa899;
+  --color-brand-dark: #0f342e;
+
+  --color-light: #f4f2f0;
+  --color-white: #fff;
+  --color-dark: #1e1e1e;
+  --color-gray: #7e7e7e;
+
+  --color-success: #195c56;
+  --color-info: #17a2b8;
+  --color-warning: #ffc107;
+  --color-danger: #dc3545;
+
+  /* Border radius */
+  --border-radius-xs: 0.25rem;
+  --border-radius-sm: 1rem;
+  --border-radius-md: 2.25rem;
+  --border-radius-lg: 3.125rem;
+  --border-radius-xl: 5rem;
+
+  /* Buttons */
+
+  --btn-font-size: 1rem;
+  --btn-radius: var(--border-radius-lg);
+  --btn-border: 1px solid var(--color-primary);
+
+  /* Icons */
+
+  --icon-md: 3rem;
+  --icon-lg: 5rem;
+
+  /* Breakpoints */
+
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 540px;
+  --breakpoint-md: 720px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
+
+  /* Utils */
+  --full-width: 100%;
+  --full-height: 100%;
+}

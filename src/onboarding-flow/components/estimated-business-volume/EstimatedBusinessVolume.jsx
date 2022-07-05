@@ -19,7 +19,7 @@ const EstimatedBusinessVolumeInitialValues = {
 
 function EstimatedBusinessVolume({ id, setActiveIndex }) {
   return (
-    <article className="padding-md">
+    <article className="spacing-md">
       <p>What is the estimated monthly volume in € and what is the average transaction size in €?</p>
       <Formik
         initialValues={EstimatedBusinessVolumeInitialValues}

@@ -1,6 +1,5 @@
 import React from "react";
 import Icon from "../../assets/icons";
-import "./SideNav.css";
 
 function SideNav() {
   return (

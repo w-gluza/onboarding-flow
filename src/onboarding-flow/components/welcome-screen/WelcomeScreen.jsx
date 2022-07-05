@@ -14,7 +14,7 @@ function WelcomeScreen({ handleStepUpdate, setActiveIndex, id }) {
   };
 
   return (
-    <article className="padding-md">
+    <article className="spacing-md">
       <p>
         You need to upload and complete KYC & Due Dilligence. Input your basic information about the customer and add
         the UBO. Upload KYC documents and add Due Dilligence.

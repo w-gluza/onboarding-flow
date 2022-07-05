@@ -17,7 +17,7 @@ const BusinessNatureInitialValues = {
 
 function BusinessNature({ id, setActiveIndex }) {
   return (
-    <article className="padding-md">
+    <article className="spacing-md">
       <p>What is the nature of the business transaction?</p>
       <Formik
         initialValues={BusinessNatureInitialValues}

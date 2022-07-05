@@ -1,0 +1,50 @@
+/* ----- Sections ----- */
+
+.page-layout {
+  background-color: var(--color-primary);
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 9fr;
+}
+
+.main-container-layout {
+  background-color: var(--color-light);
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 5fr 4fr;
+}
+
+.onboarding-section {
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--color-primary);
+  height: 100vh;
+}
+
+.faq-contents {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  background-color: var(--color-brand-bright);
+  margin: var(--spacing-md);
+  padding: var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: var(--spacing-md);
+  margin-bottom: 0;
+}

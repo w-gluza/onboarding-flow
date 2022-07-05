@@ -5,7 +5,7 @@ import ButtonGroup from "../../../@common/components/button-group/ButtonGroup";
 
 function CustomerApproval({ setActiveIndex }) {
   return (
-    <article className="padding-md">
+    <article className="spacing-md">
       <p>Your customer is now approved.</p>
       <ButtonGroup>
         <Button text="Close" variant="secondary" onClick={() => setActiveIndex(0)} />
