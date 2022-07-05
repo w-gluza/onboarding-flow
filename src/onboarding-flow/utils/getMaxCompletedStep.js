@@ -1,5 +1,3 @@
-import formInitialValues from "./formInitialValues";
-
 const STEPS_ENUM = {
   welcomeStepCompleted: 1,
   companyDetailsCompleted: 2,
@@ -9,10 +7,10 @@ const STEPS_ENUM = {
   customerApproval: 6,
 };
 
-const getMaxCompletedStep = () => {
-  const stepsArray = Object.keys(formInitialValues.steps).map((key) => ({
+const getMaxCompletedStep = (valuesFromLS) => {
+  const stepsArray = Object.keys(valuesFromLS).map((key) => ({
     name: key,
-    isCompleted: formInitialValues.steps[key],
+    isCompleted: valuesFromLS[key],
     stepNumber: STEPS_ENUM[key],
   }));
 

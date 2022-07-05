@@ -17,7 +17,10 @@ const EstimatedBusinessVolumeInitialValues = {
   estimatedTransactionSize: "",
 };
 
-function EstimatedBusinessVolume({ id, setActiveIndex }) {
+function EstimatedBusinessVolume({ id, setActiveIndex, handleStepUpdate }) {
+  const step = {
+    estimatedMonthlyVolume: true,
+  };
   return (
     <article className="spacing-md">
       <p>What is the estimated monthly volume in € and what is the average transaction size in €?</p>
@@ -25,7 +28,8 @@ function EstimatedBusinessVolume({ id, setActiveIndex }) {
         initialValues={EstimatedBusinessVolumeInitialValues}
         validationSchema={EstimatedBusinessVolumeMessagesSchema}
         onSubmit={(values, { resetForm }) => {
-          // console.log(values);
+          setActiveIndex(id + 1);
+          handleStepUpdate(step);
           resetForm();
         }}
       >
@@ -66,6 +70,7 @@ function EstimatedBusinessVolume({ id, setActiveIndex }) {
 EstimatedBusinessVolume.propTypes = {
   id: PropTypes.number.isRequired,
   setActiveIndex: PropTypes.func.isRequired,
+  handleStepUpdate: PropTypes.func.isRequired,
 };
 
 export default EstimatedBusinessVolume;

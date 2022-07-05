@@ -12,8 +12,8 @@ import BusinessNature from "../components/business-nature/BusinessNature";
 import EstimatedBusinessVolume from "../components/estimated-business-volume/EstimatedBusinessVolume";
 import CustomerApproval from "../components/customer-approval/CustomerApproval";
 
-function OnboardingFlow({ handleStepUpdate }) {
-  const [activeIndex, setActiveIndex] = useState(null);
+function OnboardingFlow({ handleStepUpdate, initialActiveIndex }) {
+  const [activeIndex, setActiveIndex] = useState(initialActiveIndex);
 
   return (
     <section className="onboarding-section">
@@ -36,7 +36,7 @@ function OnboardingFlow({ handleStepUpdate }) {
           iconName="two"
           headingTitle="Company details"
         >
-          <CompanyDetails setActiveIndex={setActiveIndex} id={2} />
+          <CompanyDetails handleStepUpdate={handleStepUpdate} setActiveIndex={setActiveIndex} id={2} />
         </SinglePanel>
 
         <SinglePanel
@@ -46,7 +46,7 @@ function OnboardingFlow({ handleStepUpdate }) {
           iconName="three"
           headingTitle="Ultimate beneficial owner(s)"
         >
-          <UltimateBeneficialOwner setActiveIndex={setActiveIndex} id={3} />
+          <UltimateBeneficialOwner handleStepUpdate={handleStepUpdate} setActiveIndex={setActiveIndex} id={3} />
         </SinglePanel>
 
         <SinglePanel
@@ -56,7 +56,7 @@ function OnboardingFlow({ handleStepUpdate }) {
           iconName="four"
           headingTitle="Nature of business"
         >
-          <BusinessNature setActiveIndex={setActiveIndex} id={4} />
+          <BusinessNature handleStepUpdate={handleStepUpdate} setActiveIndex={setActiveIndex} id={4} />
         </SinglePanel>
 
         <SinglePanel
@@ -66,7 +66,7 @@ function OnboardingFlow({ handleStepUpdate }) {
           iconName="five"
           headingTitle="Estimated monthly volume"
         >
-          <EstimatedBusinessVolume setActiveIndex={setActiveIndex} id={5} />
+          <EstimatedBusinessVolume handleStepUpdate={handleStepUpdate} setActiveIndex={setActiveIndex} id={5} />
         </SinglePanel>
 
         <SinglePanel
@@ -76,7 +76,7 @@ function OnboardingFlow({ handleStepUpdate }) {
           iconName="six"
           headingTitle="Customer approval"
         >
-          <CustomerApproval setActiveIndex={setActiveIndex} />
+          <CustomerApproval handleStepUpdate={handleStepUpdate} setActiveIndex={setActiveIndex} />
         </SinglePanel>
       </PanelGroup>
     </section>
@@ -85,6 +85,7 @@ function OnboardingFlow({ handleStepUpdate }) {
 
 OnboardingFlow.propTypes = {
   handleStepUpdate: PropTypes.func.isRequired,
+  initialActiveIndex: PropTypes.number.isRequired,
 };
 
 export default OnboardingFlow;

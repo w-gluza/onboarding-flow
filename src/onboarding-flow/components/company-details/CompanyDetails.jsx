@@ -30,13 +30,17 @@ const CompanyDetailsInitialValues = {
   regNumber: "",
 };
 
-function CompanyDetails({ id, setActiveIndex }) {
+function CompanyDetails({ id, setActiveIndex, handleStepUpdate }) {
+  const step = {
+    companyDetailsCompleted: true,
+  };
   return (
     <article className="spacing-md">
       <Formik
         initialValues={CompanyDetailsInitialValues}
         validationSchema={CompanyDetailsMessagesSchema}
         onSubmit={(values, { resetForm }) => {
+          handleStepUpdate(step);
           setActiveIndex(id + 1);
           resetForm();
         }}
@@ -100,6 +104,7 @@ function CompanyDetails({ id, setActiveIndex }) {
 CompanyDetails.propTypes = {
   id: PropTypes.number.isRequired,
   setActiveIndex: PropTypes.func.isRequired,
+  handleStepUpdate: PropTypes.func.isRequired,
 };
 
 export default CompanyDetails;

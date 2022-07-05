@@ -30,7 +30,11 @@ const UltimateBeneficialOwnerInitialValues = {
   utilityBill: "",
 };
 
-function UltimateBeneficialOwner({ id, setActiveIndex }) {
+function UltimateBeneficialOwner({ id, setActiveIndex, handleStepUpdate }) {
+  const step = {
+    uboCompleted: true,
+  };
+
   return (
     <article className="spacing-md">
       <p>Who is the Ultimate Beneficial Owner(s)?</p>
@@ -44,6 +48,7 @@ function UltimateBeneficialOwner({ id, setActiveIndex }) {
         validationSchema={UltimateBeneficialOwnerMessagesSchema}
         onSubmit={(values, { resetForm }) => {
           // console.log(values);
+          handleStepUpdate(step);
           setActiveIndex(id + 1);
           resetForm();
         }}
@@ -120,6 +125,7 @@ function UltimateBeneficialOwner({ id, setActiveIndex }) {
 UltimateBeneficialOwner.propTypes = {
   id: PropTypes.number.isRequired,
   setActiveIndex: PropTypes.func.isRequired,
+  handleStepUpdate: PropTypes.func.isRequired,
 };
 
 export default UltimateBeneficialOwner;

@@ -4,10 +4,9 @@ import PanelContainer from "../../../@common/components/panel/PanelContainer";
 import PanelHeader from "../../../@common/components/panel/PanelHeader";
 import PanelContent from "../../../@common/components/panel/PanelContent";
 import FormHeading from "../../../@common/components/form/form-heading/FormHeading";
-import getMaxCompletedStep from "../../utils/getMaxCompletedStep";
 
 function SinglePanel({ id, iconName, headingTitle, activeIndex, setActiveIndex, children }) {
-  const iconActive = id !== activeIndex && id <= getMaxCompletedStep();
+  const iconActive = id !== activeIndex && id <= activeIndex;
 
   return (
     <PanelContainer key={id}>

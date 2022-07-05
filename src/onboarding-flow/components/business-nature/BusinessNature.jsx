@@ -15,7 +15,11 @@ const BusinessNatureInitialValues = {
   businessNature: "",
 };
 
-function BusinessNature({ id, setActiveIndex }) {
+function BusinessNature({ id, setActiveIndex, handleStepUpdate }) {
+  const step = {
+    businessNatureCompleted: true,
+  };
+
   return (
     <article className="spacing-md">
       <p>What is the nature of the business transaction?</p>
@@ -24,6 +28,8 @@ function BusinessNature({ id, setActiveIndex }) {
         validationSchema={BusinessNatureMessagesSchema}
         onSubmit={(values, { resetForm }) => {
           // console.log(values);
+          handleStepUpdate(step);
+          setActiveIndex(id + 1);
           resetForm();
         }}
       >
@@ -54,6 +60,7 @@ function BusinessNature({ id, setActiveIndex }) {
 BusinessNature.propTypes = {
   id: PropTypes.number.isRequired,
   setActiveIndex: PropTypes.func.isRequired,
+  handleStepUpdate: PropTypes.func.isRequired,
 };
 
 export default BusinessNature;
