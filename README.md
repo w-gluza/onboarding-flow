@@ -4,7 +4,7 @@ Onboarding flow written in React.
 
 ### Preview:
 
-https://app.netlify.com/sites/cheery-fairy-104ab8/overview
+https://cheery-fairy-104ab8.netlify.app/
 
 ### About the project
 
